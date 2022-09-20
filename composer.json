@@ -12,5 +12,8 @@
             "email": "nopow.link@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require": {
+        "nopow-link/nll_php": "^0.1.6"
+    }
 }
