@@ -15,5 +15,10 @@
     "minimum-stability": "stable",
     "require": {
         "nopow-link/nll_php": "^0.1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "NlpSymfony\\Bundle\\": "."            
+        }
     }
 }
