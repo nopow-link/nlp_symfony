@@ -15,13 +15,14 @@ class NlpSymfonyExtension extends Extension
 
     public function load(array $configs, ContainerBuilder $container)
     {
-        $path = new Path(__DIR__);
+
+        $path = new Path(__FILE__);
 
         var_dump("load");
         var_dump($configs);
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator($path->absolut('/../Ressources/config'))
+            new FileLocator($path->absolut('./../Ressources/config'))
         );
         $loader->load('services.yaml');
 
@@ -31,7 +32,10 @@ class NlpSymfonyExtension extends Extension
         foreach ($config as $key => $value) {
             $container->setParameter('nlp_symfony.' . $key, $value);
         }
-        var_dump($container);
+        // var_dump($container);
+
+
+
         
 
     }

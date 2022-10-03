@@ -22,6 +22,8 @@ class NlpSymfonyBundle extends Bundle
     public function boot()
     {
         var_dump("boot");
+
+        
         // $ext = new NlpSymfonyExtension([], $container);
         var_dump($this->getContainerExtension());
     }

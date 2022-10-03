@@ -1,4 +1,12 @@
 parameters: 
       nlp_symfony.api_key: ''
       nlp_symfony.advanced:
-            api_cache: '%kernel.cache_dir%'
+            api_cache: ''
+
+services:
+      nlp_symfony.response_events:
+            class: NlpSymfony\Bundle\Src\ResponseEvents
+            arguments:
+                  $settings: "@parameter_bag"
+            tags:
+                  - { name: kernel.event_subscriber }
