@@ -19,6 +19,9 @@ class Settings
 
         $this->api_settings = ApiSettings::getInstance();
         $this->api_settings->setUrl($this->url);
+
+        // ->getParameter('kernel.cache_dir')
+
         // $this->api_settings->setCacheFolder();
     }
 

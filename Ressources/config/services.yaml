@@ -1,13 +1,4 @@
 parameters: 
       nlp_symfony.api_key: ''
-      nlp_symfony.advanced.api_cache: ''
-      nlp_symfony.name: 'Nopow-Link'
-      nlp_symfony.url: 'http://127.0.0.1:8001/fr/app/'
-      nlp_symfony.timeout: '2.0'
-      nlp_symfony.version: '0.0.1'
-      nlp_symfony.debug: True
-      nlp_symfony.root: __DIR__
-      nlp_symfony.site:
-            site.plugin_url: 
-            site.host:
-            site.protocole:
+      nlp_symfony.advanced:
+            api_cache: '%kernel.cache_dir%'
