@@ -10,3 +10,10 @@ services:
                   $settings: "@parameter_bag"
             tags:
                   - { name: kernel.event_subscriber }
+
+      nlp_symfony.request_events:
+            class: NlpSymfony\Bundle\Src\RequestEvents
+            arguments:
+                  $settings: "@parameter_bag"
+            tags:
+                  - { name: kernel.event_subscriber }
