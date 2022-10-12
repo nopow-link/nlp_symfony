@@ -17,6 +17,8 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('advanced')
                     ->children()
                         ->scalarNode('api_cache')->end()
+                        ->scalarNode('url')->end()
+                        ->scalarNode('timeout')->end()
                     ->end()
                 ->end()
             ->end()

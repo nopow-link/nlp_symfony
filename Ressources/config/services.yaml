@@ -2,17 +2,19 @@ parameters:
       nlp_symfony.api_key: ''
       nlp_symfony.advanced:
             api_cache: ''
+            url: ''
+            timeout: ''
 
 services:
       nlp_symfony.response_events:
-            class: NlpSymfony\Bundle\Src\ResponseEvents
+            class: NlpSymfony\Bundle\Event\RewriteHtml
             arguments:
                   $settings: "@parameter_bag"
             tags:
                   - { name: kernel.event_subscriber }
 
       nlp_symfony.request_events:
-            class: NlpSymfony\Bundle\Src\RequestEvents
+            class: NlpSymfony\Bundle\Event\Request
             arguments:
                   $settings: "@parameter_bag"
             tags:

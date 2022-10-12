@@ -3,6 +3,7 @@
 namespace NlpSymfony\Bundle;
 
 use NlpSymfony\Bundle\DependencyInjection\NlpSymfonyExtension;
+use NlpSymfony\Bundle\Controller\BaseController;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder; 
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -18,14 +19,4 @@ class NlpSymfonyBundle extends Bundle
         var_dump("container");
         var_dump($this->getContainerExtension());
     }
-
-    public function boot()
-    {
-        var_dump("boot");
-
-        
-        // $ext = new NlpSymfonyExtension([], $container);
-        var_dump($this->getContainerExtension());
-    }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace NlpSymfony\Bundle\Ressources\views;
+namespace NlpSymfony\Bundle\Utils;
 
 use NllLib\ApiSettings;
 use NllLib\Utils\Path;
@@ -13,16 +13,15 @@ class Settings
 
     private $settings;
 
-    private function __construct(array $settings = [])
+    public function __construct($parametter)
     {
-        $this->settings = $settings;
+        $path = new Path(__DIR__); 
 
         $this->api_settings = ApiSettings::getInstance();
-        $this->api_settings->setUrl($this->url);
-
-        // ->getParameter('kernel.cache_dir')
-
-        // $this->api_settings->setCacheFolder();
+        $this->api_settings->setCacheFolder($path->absolut($parametter[1]));
+        $this->api_settings->setUrl($parametter[2]);
+        $this->api_settings->setTimeout($parametter[3]);
+        var_dump($this->api_settings);
     }
 
     public static function getInstance(array $settings = [])
