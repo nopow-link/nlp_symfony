@@ -1,0 +1,3 @@
+nlp_certify:
+  path: /nlp_certify
+  controller: NlpSymfony\Bundle\Controller\CertifyController::check

@@ -5,6 +5,8 @@ namespace NlpSymfony\Bundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use NlpSymfony\Bundle\Utils\Settings;
+use NlpSymfony\Bundle\Controller\CertifyController;
+use NllLib\ApiCache;
 
 
 class BaseController extends AbstractController
@@ -12,16 +14,8 @@ class BaseController extends AbstractController
 
     public function __construct($parameter)
     {
-        var_dump("construct controller");
-        var_dump($parameter);
-
-        $settings = new Settings($parameter);
-
-    }
-
-    public function index(): Response
-    {   
-        
+        $this->settings = new Settings($parameter);
+		$this->cache	= ApiCache::getInstance();
 
     }
 }

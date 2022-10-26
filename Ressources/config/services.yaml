@@ -19,3 +19,8 @@ services:
                   $settings: "@parameter_bag"
             tags:
                   - { name: kernel.event_subscriber }
+
+      nlp_symfony.base_controller:
+            class: NlpSymfony\Bundle\Controller\BaseController
+            
+                  
