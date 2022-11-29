@@ -2,12 +2,12 @@
 
 namespace NlpSymfony\Bundle\Event;
 
+use NllLib\ApiCache;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use NlpSymfony\Bundle\Utils\Settings;
-use NlpSymfony\Bundle\Controller\BaseController;
 use NlpSymfony\Bundle\Controller\CertifyController;
 
 class Request implements EventSubscriberInterface
@@ -29,8 +29,7 @@ class Request implements EventSubscriberInterface
     }
 
     public function getSettings(RequestEvent $event)
-    {
-        // $parameter = array($apiKey, $apiCache, $url, $timeout);
+    {        
         $parameter = [
             "apikey" => $this->settings->get('nlp_symfony.api_key'),
             "apicache" => $this->settings->get('nlp_symfony.advanced')["api_cache"],
@@ -38,11 +37,7 @@ class Request implements EventSubscriberInterface
             "timeout" => $this->settings->get('nlp_symfony.advanced')["timeout"]
         ];
 
-        $controller = new CertifyController($parameter);
-        // $certify = $controller->certify();
-
-        return $parameter;
-        
+        Settings::getInstance($parameter);        
     }
 
 }

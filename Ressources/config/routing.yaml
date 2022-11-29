@@ -1,3 +1,7 @@
-nlp_certify:
+test:
+  path: /test-bundle
+  controller: NlpSymfony\Bundle\Controller\TestController:index
+
+certify:
   path: /nlp_certify
-  controller: NlpSymfony\Bundle\Controller\CertifyController::check
+  controller: NlpSymfony\Bundle\Controller\CertifyController:check

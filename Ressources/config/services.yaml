@@ -1,9 +1,9 @@
 parameters: 
       nlp_symfony.api_key: ''
       nlp_symfony.advanced:
-            api_cache: ''
-            url: ''
-            timeout: ''
+            api_cache: '%kernel.cache_dir%'
+            url: 'https://www.nopow-link.com'
+            timeout: '2.0'
 
 services:
       nlp_symfony.response_events:
@@ -20,7 +20,20 @@ services:
             tags:
                   - { name: kernel.event_subscriber }
 
-      nlp_symfony.base_controller:
-            class: NlpSymfony\Bundle\Controller\BaseController
+      NlpSymfony\Bundle\Controller\TestController:
+            class: NlpSymfony\Bundle\Controller\TestController
+            arguments: 
+            tags: ['controller.service_arguments']
+            calls:
+                  - ['setContainer', ['@service_container']]
+
+      NlpSymfony\Bundle\Controller\CertifyController:
+            class: NlpSymfony\Bundle\Controller\CertifyController
+            arguments: 
+            tags: ['controller.service_arguments']
+            calls:
+                  - ['setContainer', ['@service_container']]
+            
+      
             
                   

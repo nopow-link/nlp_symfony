@@ -9,14 +9,13 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Kernel;
 
+
 class NlpSymfonyBundle extends Bundle
 { 
 
     public function build(ContainerBuilder $container)
     {
-        var_dump("build");
+        var_dump("build <br/>");
         $ext = new NlpSymfonyExtension([],$container);
-        var_dump("container");
-        var_dump($this->getContainerExtension());
     }
 }

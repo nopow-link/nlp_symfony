@@ -32,10 +32,10 @@ class RewriteHtml implements EventSubscriberInterface
         $apiCache = $this->settings->get('nlp_symfony.advanced');
         
         $response = $event->getResponse();
-        // var_dump($response);
-
+        
         $response->headers->set('X-Frame-Options`', $apiKey);
         $response->headers->set('test', $apiCache); 
+        var_dump($response->getContent());
     }
 
     
