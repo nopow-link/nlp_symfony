@@ -20,7 +20,6 @@ class CertifyController extends AbstractController
         try {
             $data = $request->certify($this->settings->getApiKey());
             $key = $this->settings->getApiKey();
-            // var_dump($data);
         } catch (NllLibReqException $e) {
             var_dump($e);
         }
@@ -36,6 +35,7 @@ class CertifyController extends AbstractController
         $key = $this->settings->getApiKey();
 
         $check = $this->cache->keyRetrieve();
+        // var_dump($check);
         if (strcmp($key, $check) == 0)
         {
             return new Response("{'data': { 'valid' : True }}");

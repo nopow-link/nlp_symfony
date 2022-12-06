@@ -60,6 +60,7 @@ class NlpSymfonyExtension extends Extension
             $data = $request->certify($settings->getApiKey());
             $key = $settings->getApiKey();
             var_dump($data);
+            var_dump($key);
         } catch (NllLibReqException $e) {
             var_dump($e);
         }
