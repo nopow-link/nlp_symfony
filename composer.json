@@ -1,5 +1,6 @@
 {
-    "name": "nopow-link/nlp_symfony",
+    "name": "nopow-link/nlp_symfony_5",
+    "version": "0.0.1",
     "description": "Plugin Nopow-Link for symfony",
     "type": "symfony-bundle",
     "require-dev": {
