@@ -38,11 +38,10 @@ class NlpSymfonyExtension extends Extension
             $container->setParameter('nlp_symfony.' . $key, $value);
         }
         // lever une exception si aucune clé d'api 
-        // throw new \Exception();
-        // if ($config["api_key"] == "")
-        // {
-        //     throw new NllLibCollectException();
-        // }
+        if ($config["api_key"] == "")
+        {
+            throw new NllLibReqException();
+        }
         var_dump($config);
         $parameter = [
             "apikey" => $config["api_key"],
